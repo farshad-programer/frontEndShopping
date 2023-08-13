@@ -7,6 +7,7 @@ export const usersApiSlice = apiSlice.injectEndpoints({
         getUsers: builder.query({
             query: () => '/api/admin/',
             
+            
         })
     })
 })

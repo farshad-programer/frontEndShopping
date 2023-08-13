@@ -6,6 +6,9 @@ import LoginComponent from "./features/auth/Login";
 import LogOut from "./features/auth/logout";
 import AdminGet from "./features/admin/getAdmin";
 import PersistLogin from "./features/auth/PersistLogin";
+import CreatePos from "./features/createPost/exPost";
+
+
 
 const App = () => {
   return (
@@ -17,6 +20,7 @@ const App = () => {
           <Route path="logout" element={<LogOut />} />
           <Route element={<PersistLogin />}>
             <Route path="admin" element={<AdminGet />} />
+            <Route path="post" element={<CreatePos />} />
           </Route>
         </Route>
       </Routes>

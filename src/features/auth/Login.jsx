@@ -6,16 +6,17 @@ import { PulseLoader } from "react-spinners";
 import { Link, Navigate } from "react-router-dom";
 import useScreenSize from "../../hooks/screenSize";
 import ErrorMessages from "../../components/Errors/ErrorMessage";
-
 import { useDispatch } from "react-redux";
 import { setCredentials } from "./authSlice";
 import { useLoginMutation } from "./authApiSlice";
-import usePersist from "../../hooks/usePersist";
+
 
 const LoginComponent = () => {
   // ----------------prssist----------4
-  const [persist, setPersist] = usePersist();
-  const handleToggle = () => setPersist((prev) => !prev);
+  
+  const handlepersist = () => {
+    localStorage.setItem("persist", true)
+  };
 
   // -------------------proccess
   const dispatch = useDispatch();
@@ -83,6 +84,7 @@ const LoginComponent = () => {
                 <Link
                   className="btn a  my-6  font-greatvibes bg-lime-900 text-lg rounded-xl"
                   to="/admin"
+                  onClick={handlepersist}
                 >
                   <span className=" text-yellow-100">Success</span>
                 </Link>
@@ -203,16 +205,8 @@ const LoginComponent = () => {
                 </div>
               </div>
             </div>
-            <label htmlFor="persist" className="form__persist">
-              <input
-                type="checkbox"
-                className="form__checkbox"
-                id="persist"
-                onChange={handleToggle}
-                checked={persist}
-              />
-              Trust This Device
-            </label>
+            {/* ----------prsisst----------- */}
+            
             {/* ----------------------------errordata--------------- */}
             {isError ? (
               <div className=" justify-center relative mx-3 items-center w-auto  bg-opacity-50 text-white py-2 my-7 rounded-xl text-center  bg-red-600">

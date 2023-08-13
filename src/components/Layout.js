@@ -21,9 +21,9 @@ const Layout = () => {
       <div
         className={`w-screen  h-screen flex justify-start relative items-end bg-cover aa bg-no-repeat `}
       >
-        <div className="my-40"></div>
+        
         <Outlet />
-
+        
         <div
           className={`bg-cover bg-left-bottom  w-auto h-auto  overflow-hidden  bb  `}
         >
